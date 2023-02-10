@@ -1,25 +1,23 @@
-Book = class book{
-  constructor(Title,Author,ISBN,NumberofCopies,availability,CopiesSold){
+class Book{
+  constructor(title,author,ISBN,NumberofCopies,){
     this.Title=Title;
     this.Author=Author;
     this.ISBN=ISBN;
-    this.NumberofCopies
-    this.availability=()=>{
-      if(NumberofCopies===0)
-      return "out of Stock"
+    this.NumberofCopies=NumberofCopies;
+  }
+    get getavailability() {
+      this.NumberofCopies===0
+        ? console.log("out of stock")
+        : this.NumberofCopies < 10
+        ? console.log("low stock")
+        :console.log("in stock");
+
     }
-    if(NumberofCopies<10){
-      return "low on stock"
+    sell(NumberSold =1) {
+      return NumberSold - this.NumberofCopies;
+    }
+    restock(NumberSold =5) {
+      return NumberSold + this.NumberofCopies;
     }
 
-    this.CopiesSold=CopiesSold
-    this.Restock=[5]
-    this.edition=edition
   }
- }
- class TechnicalBook extends Book{
-  constructor(edition){
-  this.edition=edition
-  }
-}
-function getEdition

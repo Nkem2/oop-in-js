@@ -1,12 +1,14 @@
-movie = classMovie{
-  constructor(title,Director,Genre,ReleaseYear,Rating){
+function Movie(title,Director,Genre,ReleaseYear,Rating) {
+  
     this.title= title;
     this.Director= Director;
     this.Genre= Genre;
     this.ReleaseYear= ReleaseYear;
     this.Rating=Rating;
   }
-}
-function getOverview(){
-  console.log(${movie},"a" ${Genre} "film directed by" )
-}
+
+Movie.prototype.getOverview = function () {
+  console.log(
+    `${this.title}, a ${this.Genre} film directed by ${this.Director}, was released in ${this.ReleaseYear}.Received rating of{this.rating}`
+  );
+};
